@@ -1,13 +1,41 @@
+$(document).ready(function() {
+	// Test for placeholder support
+    $.support.placeholder = (function(){
+        var i = document.createElement('input');
+        return 'placeholder' in i;
+    })();
 
+    // Hide labels by default if placeholders are supported
+    if($.support.placeholder) {
+        $('.label-form-contact').each(function(){
+            $(this).addClass('js-hide-label');
+        });
 
+        // Code for adding/removing classes here
+        $('.form-group-contact').find('input, textarea-contact').on('keyup blur focus', function(e){
 
+            // Cache our selectors
+            var $this = $(this),
+                $parent = $this.parent().find("label");
 
-
-
-
-
-//= require rails-ujs
-//= require activestorage
-//= require turbolinks
-//= require jquery3
-//= require_tree .
+						switch(e.type) {
+							case 'keyup': {
+								 $parent.toggleClass('js-hide-label', $this.val() == '');
+							} break;
+							case 'blur': {
+								if( $this.val() == '' ) {
+                    $parent.addClass('js-hide-label');
+                } else {
+                    $parent.removeClass('js-hide-label').addClass('js-unhighlight-label');
+                }
+							} break;
+							case 'focus': {
+								if( $this.val() !== '' ) {
+                    $parent.removeClass('js-unhighlight-label');
+                }
+							} break;
+							default: break;
+						}
+        });
+    }
+});

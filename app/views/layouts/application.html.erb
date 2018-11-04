@@ -1,4 +1,5 @@
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
     <title>New-app</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -6,7 +7,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,7 +20,43 @@
   <body>
 
       <header>
-        <div class="contact-header">
+        <div class="hidden_header"  id="hidden_header">
+          <nav class="navbar  navbar-expand-lg navbar-dark">
+              <%=image_tag("bicycle-logo.png", class: "navbar-brand")%>
+              <span class="hidden-icon-container ml-auto">
+              <%=image_tag("loading-arrows.png", class: "hidden-icon")%>
+              <span data-toggle="collapse" data-target="#search_hidden" >
+                <%=image_tag("search.png", class: "hidden-icon")%>
+              </span>
+            </span>
+            <span class="navbar-toggler"  data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"> <%=image_tag("hidden_menu.png")%></span>
+            </span>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li><%= link_to "HOME", simple_pages_about_path, {:style=>'color:#27ae60;'} %></li>
+                <li><%= link_to "ABOUT US", simple_pages_contact_path, {:style=>'color:#000;'} %></li>
+                <li><%= link_to "TEST DRIVE", simple_pages_contact_path, {:style=>'color:#000;'} %></li>
+                <li><%= link_to "KIDS", simple_pages_contact_path, {:style=>'color:#000;'} %></li>
+                <li><%= link_to "BLOG", simple_pages_contact_path, {:style=>'color:#000;'} %></li>
+                <li><%= link_to "SHOP", simple_pages_contact_path, {:style=>'color:#000;'} %></li>
+                <li><%= link_to "CONTACT US", simple_pages_contact_path, {:style=>'color:#000;'} %></li>
+              </ul>
+            </div>
+            </nav>
+
+      </div><!--End hidden header-->
+
+              <div class="collapse" id="search_hidden">
+                <form class=" form-group row form-hidden ">
+                  <label for="inputHorizontalSuccess"><span>All Categories</span><%=image_tag("search-arrow.png", class: "searh-arrow  ")%></label>
+                    <input type="email" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="Enter Search Keyword...">
+                </form><!--form-horizontal-->
+              </div><!--Hidden search-->
+
+
+
+        <div class="contact-header" id="contact-header">
         <div class="container">
           <div class="row">
             <div class="col-md-7 col-lg-7 col-sm-7 socialnet-top ">
@@ -38,9 +79,12 @@
             </div>
           </div><!--End row-->
         </div><!--End container-fluid-->
+
+
+        </div>
       </header>
 
-      <div class="container form-header">
+      <div class="container form-header" id="form-header">
             <div class="row">
               <div class="col-md-3 col-lg-3 col-sm-3">
                 <%=image_tag("bicycle-logo.png", class: "principal-logo")%>
@@ -61,8 +105,7 @@
               </div>
            </div><!--End row-->
         </div><!--End form-header-->
-
-      <div class=" nav-container">
+      <div class=" nav-container" id="nav-container">
         <div class="container ">
           <div class="row">
             <div class="col-md-3 col-lg-3 col-sm-3 ">
@@ -80,8 +123,8 @@
             <div class="col-md-9 col-sm-9 col-lg-9 ">
               <div class="list-container">
                 <ul class=" nav links-navbar">
-                  <li><%= link_to "HOME", simple_pages_about_path, {:style=>'color:#FFFFFF;', class: 'link_style'} %></li>
-                  <li><%= link_to "ABOUT US", simple_pages_contact_path, {:style=>'color:#FFFFFF;', class: 'link_style'} %></li>
+                  <li><%= link_to "HOME", simple_pages_index_path, {:style=>'color:#FFFFFF;', class: 'link_style'} %></li>
+                  <li><%= link_to "ABOUT US", simple_pages_about_path, {:style=>'color:#FFFFFF;', class: 'link_style'} %></li>
                   <li><%= link_to "TEST DRIVE", simple_pages_contact_path, {:style=>'color:#FFFFFF;', class: 'link_style'} %></li>
                   <li><%= link_to "KIDS", simple_pages_contact_path, {:style=>'color:#FFFFFF;', class: 'link_style'} %></li>
                   <li><%= link_to "BLOG", simple_pages_contact_path, {:style=>'color:#FFFFFF;', class: 'link_style'} %></li>
@@ -92,17 +135,115 @@
           </div><!--End row-->
         </div><!--End container-->
       </div>
+    </div><!--End nav container-->
+  <%= yield %>
+
+    <div class="contact-footer-info">
+      <div class="container">
+        <div class="row">
+          <div class="  col-md-5  col-lg-4 ">
+            <div class="info-social-contact">
+              <div class="bicycle-footer-logo">
+                <%=image_tag("bicycle-footer-logo.png")%>
+              </div>
+              <div class="info-social-text">
+                <p>Ciya Shop is an enchanting and easy to use e-Commerce WP
+                 theme that allows you to sell your products in a dynamic way.</p>
+              </div>
+              <div class="footer-contact-icons">
+                <div class="fc-ft-icon">
+                  <%=image_tag("facebook-contact-icon.png")%>
+                </div>
+                <div class="fc-ft-icon">
+                  <%=image_tag("twitter-ft-contact.png")%>
+                </div>
+                <div class="fc-ft-icon">
+                  <%=image_tag("google-ft-contact.png")%>
+                </div>
+                <div class="fc-ft-icon">
+                  <%=image_tag("dribbble-ft-contact.png")%>
+                </div>
+                <div class="fc-ft-icon">
+                  <%=image_tag("linkedin-ft-contact.png")%>
+                </div>
+              </div><!--end footer-contact-icons-->
+            </div><!--End info-social-contact-->
+          </div><!--End col-->
+
+          <div class=" col-md-3  col-lg-4 hidden-col-hours ">
+            <div class=" opening-title">
+              <h3>Opening Hours</h3>
+            </div>
+            <div class="opening-hours">
+
+              <p><%=image_tag("clock-circular.png")%>&nbsp&nbspMonday</p>
+              <p><%=image_tag("clock-circular.png")%>&nbsp&nbspTuesday</p>
+              <p><%=image_tag("clock-circular.png")%>&nbsp&nbspWednesday</p>
+              <p><%=image_tag("clock-circular.png")%>&nbsp&nbspThursday</p>
+              <p><%=image_tag("clock-circular.png")%>&nbsp&nbspFriday</p>
+              <p><%=image_tag("clock-circular.png")%>&nbsp&nbspSaturday</p>
+              <p><%=image_tag("clock-circular.png")%>&nbsp&nbspSunday</p>
+            </div><!--End opening hours-->
+          </div><!--End col-->
+
+          <div class=" col-sm-12 col-md-4  col-lg-4 ">
+            <div class="adress-info-footer">
+              <h3>Contact Info</h3>
+              <div class="text-adress d-flex">
+                <div class="icon-adress-1">
+                  <%=image_tag("Location-ft-contact.png")%>
+
+                </div>
+                  <p >1635 Franklin Street Montgomery,
+                    Near Sherwood Mall. AL 36104</p>
+              </div><!--End text-adress-->
+              <div class="text-adress d-flex">
+                <div class="icon-adress-1">
+
+                    <p><%=image_tag("envelope-ft-contact.png")%>
+                    </div>
+                  <p>support@ciyashop.com</p>
+              </div><!--End text-adress-->
+              <div class="text-adress d-flex">
+                <div class="icon-adress-1">
+                  <%=image_tag("call-ft-contact.png")%>
+                </div>
+                  <p>126-632-2345</p>
+              </div><!--End text-adress-->
+            </div>
+            <div class="input-group mb-3 footer-contact-input">
+              <input type="text" class="form-control" placeholder="Enter your email">
+              <div class="input-group-append btn-input-footer">
+                <button class=" btn-success" type="submit"><%=image_tag("send-mail.png")%></button>
+               </div>
+             </div>
+
+
+          </div><!--End col-->
+        </div><!---End row-->
+      </div><!--End container-->
     </div>
-      <%= yield %>
+
+
+
+
+
+
+
+
+
+
+
 
       <footer>
+        <div class="footer-full-width">
           <div class="container">
             <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-6 d-flex">
-                <span>© Copyright 2018 Felix Pujols All Rights Reserved.</span>
+              <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center">
+                <span>© Copyright 2018 Felix All Rights Reserved.</span>
               </div>
 
-              <div class="col-lg-6 col-md-6 col-sm-6 card-container">
+              <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center">
                 <div class="card-icons">
                   <%=image_tag("skrill.png",class: "credit-card")%>
                   <%=image_tag("american-express.png",class: "credit-card")%>
@@ -114,6 +255,21 @@
               </div>
             </div><!-- End row -->
           </div><!-- End container-->
+        </div>
       </footer>
+
+      <div class="Footer-hidded">
+          <div class="phone-footer d-flex justify-content-around">
+            <%=image_tag("home.png",class: "phone-footer-icon")%>
+            <%=image_tag("like.png",class: "phone-footer-icon")%>
+            <%=image_tag("user.png",class: "phone-footer-icon")%>
+            <%=image_tag("cart-footer.png",class: "phone-footer-icon")%>
+          </div>
+        </div>
+        <%= javascript_include_tag "application" %>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </body>
 </html>
