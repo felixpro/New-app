@@ -276,6 +276,13 @@ font-size: 14px;
 .index-cont-1 {
   margin-top: 100px;
 }
+@media (max-width:993px) {
+  .index-cont-1 {
+    margin-top: 30px;
+  }
+
+  }
+
 
 .phone-footer .icon-border {
   border-left: 1px solid grey;
@@ -402,12 +409,16 @@ font-size: 14px;
   position: absolute;
   color:#fff;
   top: 30px;
-  left: 180px;
-  margin-right: 20px;
-  line-height: 14px;
-
+  margin-right: auto auto;
+  width: 100%;
 }
 
+
+.box-cycling-text {
+  display: inline;
+  margin-left: auto;
+  padding-right: 20px;
+}
 
 .galery-info-3 {
   position: relative;
@@ -467,9 +478,6 @@ font-size: 14px;
     width: 300px;
   }
 
-  .cycling-image-text-2 {
-    left: 400px;
-  }
 
 .col-galery-1 {
   margin-bottom: 20px;
@@ -491,11 +499,6 @@ font-size: 14px;
     font-size: 14px;
   }
 
-  .cycling-image-text-2 {
-    left: 200px;
-  }
-
-
 }
 
 @media (max-width:576px) {
@@ -504,9 +507,7 @@ font-size: 14px;
     font-size: 9px;
   }
 
-  .cycling-image-text-2 {
-    left: 150px;
-  }
+
   .cycling-image-text-3 h5,
   .cycling-image-text-2 h5,
   .cycling-image-text-1 h5 {
@@ -565,6 +566,17 @@ font-size: 14px;
 .about-title {
   margin-top: 100px;
   width: 80%;
+}
+
+@media (max-width:768px) {
+
+  .about-title {
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+  }
+
+
 }
 
 .col-about-1 {
