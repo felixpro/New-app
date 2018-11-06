@@ -1,0 +1,77 @@
+<link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Oswald" rel="stylesheet">
+
+<div class="header-products d-flex justify-content-center">
+  <div class="header-image-info">
+   <h1>Give your life a Pedal</h1>
+    <button type="button" name="button"><%= link_to 'ADD PRODUCT', new_product_path, {:style=>'color:#FFFFFF;', class: "add-product-link"} %></button>
+</div>
+ <%=image_tag("products-header.jpg")%>
+</div><!--End header-products -->
+
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+
+<table>
+    <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><% product.name %></td>
+        <td><% product.description %></td>
+        <td><% product.image_url %></td>
+        <td><% link_to 'Show', product %></td>
+        <td><% link_to 'Edit', edit_product_path(product) %></td>
+        <td><% link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+
+
+
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="product-content">
+              <div class="image-product">
+               <%=image_tag("for-men.jpg", class: "image")%>
+              </div>
+
+              <div class="icon-product">
+                <div class="icons-product-container">
+                  <div class="icon-product-1">
+                    <%= link_to product do %>
+                      <%=image_tag("look-product.png", )%>
+                    <% end %>
+
+                  </div>
+                  <div class="icon-product-2">
+                    <%= link_to edit_product_path(product) do %>
+                      <%=image_tag("edit-product.png")%>
+                    <% end %>
+
+                  </div>
+                  <div class="icon-product-3">
+                    <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' }  do %>
+                      <%=image_tag("close-cross.png")%>
+                    <% end %>
+
+                  </div>
+                </div>
+              </div><!--End icon-product-->
+
+              <div class="product-details d-flex">
+                <h5><%= product.name %></h5>
+                <p class="ml-auto cost-product">$125.36</p>
+              </div>
+            </div><!--End product-content-->
+          </div><!--End col-->
+
+        </div>
+      </div><!--End container-->
+
+
+    <% end %>
+  </tbody>
+</table>
+<br>
