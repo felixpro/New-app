@@ -12,30 +12,42 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
 
-  <div class="field">
-    <%= form.label :image_url %>
-    <%= form.text_field :image_url %>
-  </div>
+  <div class="container show-product-page">
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <div class="view-product-image">
 
-  <div class="field">
-  <%= form.label :cost %>
-  <%= form.text_field :cost %>
+
+<%=image_tag("placeholder-image.png")%>
+
 </div>
+      </div><!--End col-->
+      <div class="col-lg-6 col-md-12">
+        <div class="show-description-name">
+          <h5 class="product-input-labels" >Name:</h5>
+          <%= form.text_field :name, class:"edit-name-input input-product" %>
+        </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+        <div class="show-img-url">
+          <h5 class="product-input-labels" >Image url:</h5>
+          <%= form.text_field :image_url, class:"edit-name-input input-product" %>
+        </div>
 
-
+        <div class="show-description-text">
+          <h5 class="product-input-labels" >Description:</h5>
+          <%= form.text_area :description, class: " input-product" %>
+        </div>
+        <div class="show-description-cost">
+          <h5 class="product-input-labels" >price:</h5>
+          <%= form.text_field :price, class:"edit-name-input input-product" %>
+        </div>
+        <div class="actions submit-edit-button" align="center">
+          <%= form.submit %>
+        </div>
+      </div><!--End col-->
+    </div><!--End row -->
+  </div><!--End container-->
 
 <% end %>

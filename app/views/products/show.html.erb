@@ -1,36 +1,45 @@
 <p id="notice"><%= notice %></p>
-<div class="container">
-  <div class="row" align="center">
-    <div class="col-12">
+
+<h1  class="product-title" align="center">Your product</h1>
+
+
+
+
+<div class="container show-product-page">
+  <div class="row">
+    <div class="col-lg-6 col-md-12">
       <div class="view-product-image">
           <%= image_tag(@product.image_url, class: "img-fluid") %>
        </div>
-    </div>
+    </div><!--End col-->
+    <div class="col-lg-6 col-md-12">
+      <div class="show-description-name">
+        <h5>Name:</h5>
+        <p> <%= @product.name %> </p>
+      </div>
+
+      <div class="show-img-url">
+        <h5>Image url:</h5>
+        <textarea name="name" rows="2" cols="80"><%= @product.image_url %></textarea>
+      </div>
+
+
+      <div class="show-description-text">
+        <h5>Description:</h5>
+        <textarea name="name" rows="2" cols="80"><%= @product.description %></textarea>
+      </div>
+      <div class="show-description-cost">
+        <h5>price:</h5>
+          <p>$&nbsp<%= @product.price %></p>
+      </div>
+    </div><!--End col-->
 
 
 
   </div>
+</div><!--End container-->
+
+<div class="bottom-buttons">
+<%= link_to 'Edit', edit_product_path(@product), class: "Edit-link" %> <span>|</span>
+<%= link_to 'Back', products_path, class: "Back-link" %>
 </div>
-
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
-
-<p>
-  <strong>cost:</strong>
-  <%= @product.cost %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
