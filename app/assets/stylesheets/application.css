@@ -921,6 +921,8 @@ footer {
 
 .header-image-info h1 {
   font-size: 30px;
+  font-family: 'Noto Serif', serif;
+
 }
 
 }
@@ -1027,6 +1029,10 @@ margin: auto;
 .product-title {
   margin-bottom: 30px;
   margin-top: 30px;
+  font-size: 30px;
+  font-family: 'Noto Serif', serif;
+
+
 }
 .show-product-page {
   margin-top: 50px;
@@ -1046,6 +1052,8 @@ margin: auto;
   padding-bottom: 5px;
   margin-bottom: 33px;
 }
+
+
 
 .show-product-page textarea {
   max-height:50px;
@@ -1115,7 +1123,13 @@ margin: auto;
 /*End form product*/
 
 
+@media(max-width:992px) {
 
+ .form-input-info {
+   margin-top: 30px;
+ }
+
+}
 
 
 

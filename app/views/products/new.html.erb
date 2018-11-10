@@ -1,4 +1,7 @@
 <h1  class="product-title" align="center">Adding a new Product</h1>
 
 <%= render 'form', product: @product %>
-<%= link_to 'Back', products_path %>
+
+<div class="bottom-buttons">
+<%= link_to 'Back', products_path, class: "Back-link" %>
+</div>
