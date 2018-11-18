@@ -17,37 +17,31 @@
         <div class="row">
 
           <% @products.each do |product| %>
-          <div class="col-lg-4" onmouseover="show_icons()">
+          <%= link_to product do %>
+          <div class="col-lg-4">
             <div class="product-content" id="product-content">
               <div class="image-product" >
               <%= image_tag(product.image_url, class: "img-fluid") %>
               </div>
 
               <div class="icon-product" id="icon-product">
-                <div class="icons-product-container">
-                  <div class="icon-product-1">
-                    <%= link_to product do %>
-                      <%=image_tag("look-product.png", )%>
-                    <% end %>
+                <div class="icons-product-container" align="left">
 
-                  </div>
-                  <div class="icon-product-2">
-                    <%= link_to edit_product_path(product) do %>
-                      <%=image_tag("edit-product.png")%>
-                    <% end %>
 
-                  </div>
                   <div class="icon-product-3">
                     <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' }  do %>
                       <%=image_tag("close-cross.png")%>
                     <% end %>
-
                   </div>
+
                 </div>
               </div><!--End icon-product-->
 
-              <div class="product-details ">
+              <div class="product-details d-flex justify-content-between">
                 <h5><%= product.name %></h5>
+                  <%= link_to edit_product_path(product) do %>
+                    <%=image_tag("edit-product.png", class: "icon-product-edit")%>
+                  <% end %>
               </div>
               <div class="horizontal-line-product">
                 <hr>
@@ -59,6 +53,7 @@
             </div><!--End product-content-->
           </div><!--End col-->
 
+          <% end %>
 
           <% end %>
 

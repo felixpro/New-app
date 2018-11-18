@@ -38,7 +38,6 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
               <ul class="navbar-nav">
 
-
                 <li><%= link_to "HOME", simple_pages_index_path, {:style=>'color:#27ae60;'} %></li>
                 <li><%= link_to "ABOUT US", simple_pages_about_path, {:style=>'color:#000;'} %></li>
                 <li><%= link_to "PRODUCTS", products_path, {:style=>'color:#000;'} %></li>
@@ -128,13 +127,13 @@
             <div class="col-md-9 col-sm-9 col-lg-9 ">
               <div class="list-container">
                 <ul class=" nav links-navbar">
-                  <li><%= link_to "HOME", simple_pages_index_path, {:style=>'color:#FFFFFF;', class: 'link_style'} %></li>
-                  <li><%= link_to "ABOUT US", simple_pages_about_path, {:style=>'color:#FFFFFF;', class: 'link_style'} %></li>
-                  <li><%= link_to "PRODUCTS", products_path, {:style=>'color:#FFFFFF;', class: 'link_style'} %></li>
-                  <li><%= link_to "KIDS", simple_pages_contact_path, {:style=>'color:#FFFFFF;', class: 'link_style'} %></li>
-                  <li><%= link_to "BLOG", simple_pages_contact_path, {:style=>'color:#FFFFFF;', class: 'link_style'} %></li>
-                  <li><%= link_to "SHOP", simple_pages_contact_path, {:style=>'color:#FFFFFF;', class: 'link_style'} %></li>
-                  <li><%= link_to "CONTACT US", simple_pages_contact_path, {:style=>'color:#FFFFFF;', class: 'link_style'} %></li>
+                  <li><%= link_to "HOME", simple_pages_index_path, { class: 'link_style'} %></li>
+                  <li><%= link_to "ABOUT US", simple_pages_about_path, { class: 'link_style'} %></li>
+                  <li><%= link_to "PRODUCTS", products_path, { class: 'link_style'} %></li>
+                  <li><%= link_to "KIDS", simple_pages_contact_path, { class: 'link_style'} %></li>
+                  <li><%= link_to "BLOG", simple_pages_contact_path, { class: 'link_style'} %></li>
+                  <li><%= link_to "SHOP", simple_pages_contact_path, { class: 'link_style'} %></li>
+                  <li><%= link_to "CONTACT US", simple_pages_contact_path, { class: 'link_style'} %></li>
                </ul>
              </div>
           </div><!--End row-->
@@ -180,15 +179,13 @@
               <h3>Opening Hours</h3>
             </div>
             <div class="opening-hours">
-
-              <p><%=image_tag("clock-circular.png")%>&nbsp&nbspMonday</p>
-              <p><%=image_tag("clock-circular.png")%>&nbsp&nbspTuesday</p>
-              <p><%=image_tag("clock-circular.png")%>&nbsp&nbspWednesday</p>
-              <p><%=image_tag("clock-circular.png")%>&nbsp&nbspThursday</p>
-              <p><%=image_tag("clock-circular.png")%>&nbsp&nbspFriday</p>
-              <p><%=image_tag("clock-circular.png")%>&nbsp&nbspSaturday</p>
-              <p><%=image_tag("clock-circular.png")%>&nbsp&nbspSunday</p>
+              <%["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"].each do |x|%>
+              <p><%=image_tag("clock-circular.png")%>&nbsp&nbsp<%=x%></p>
+                <%end%>
             </div><!--End opening hours-->
+
+
+
           </div><!--End col-->
 
           <div class=" col-sm-12 col-md-4  col-lg-4 ">

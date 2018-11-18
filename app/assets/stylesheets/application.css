@@ -978,14 +978,15 @@ padding: 0px 15px;
 .icon-product {
   position: absolute;
   width: 100%;
-  height: 70%;
-  top:0;
+  height: 5;
+  top:5px;
   right: 0;
   display: flex;
 }
 
 .icons-product-container {
-margin: auto;
+ margin-left: auto;
+ margin-right: 20px;
 }
 
 .icon-product-1,
@@ -995,13 +996,28 @@ margin: auto;
 }
 
 .icon-product-1 img,
-.icon-product-2 img,
-.icon-product-3 img {
+.icon-product-2 img {
   border-radius: 3px;
   border:1px solid #fff;
   padding: 10px;
   background: #fff;
 }
+
+.icon-product-3 img {
+  border-radius: 150px;
+  border:1px solid #fff;
+  padding: 5px;
+  background: #fff;
+
+
+}
+
+.icon-product-edit {
+  position: relative;
+}
+
+
+
 
 .icon-product-1,
  .icon-product-2{
