@@ -8,3 +8,4 @@
 
 
 Product.create(name: "console-generated product", description: "I created this product without using the HTML form!", image_url: "http://media.istockphoto.com/photos/kitten-on-a-white-background-picture-id511458158?k=6&m=511458158&s=170667a&w=0&h=YS27-I0nj5x89iDRUZ2YxE77hEghPb0HNCWwPCrMmn8=")
+Order.create(user_id: 1, product_id: 2, total: 5.0)
