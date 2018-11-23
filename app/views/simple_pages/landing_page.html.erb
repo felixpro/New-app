@@ -1,15 +1,16 @@
 
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide landing-carousel" data-ride="carousel">
+
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <% @products.each do |product|%>
+    <li data-target="#carouselExampleIndicators" class="<%"active" if product == @products.first%>" </li>
+      <% end %>
   </ol>
 
   <div class="carousel-inner">
     <% @products.each do |product| %>
-    <div class="carousel-item<%= " active" if product == @products.first %>">
+    <div class="carousel-item<%= " active" if product === @products.first %>">
       <%= image_tag(product.image_url) %>
         <div class="carousel-caption d-none d-md-block">
           <h1><%= product.name %></h1>
