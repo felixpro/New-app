@@ -1167,6 +1167,38 @@ padding: 0px 15px;
 
 /*ENd landing-page */
 
+.order-description .price-description{
+  width: 200px;
+}
+.order-description {
+  border: 1px solid grey;
+  padding: 0 10px;
+}
+.order-description p{
+  margin: 0;
+}
+.order-description .order-product-title{
+  float: left;
+}
+.order-name-quantity {
+  border: 1px solid grey;
+  border-top: none;
+  
+}
+
+.total-info {
+  border: 1px solid grey;
+  height: 300px;
+}
+
+.image-order img { width: 100px; }
+
+/*Order page*/
+
+
+
+/*End order*/
+
 
 /* Typography */
 
