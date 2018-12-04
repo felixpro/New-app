@@ -1,53 +1,54 @@
 <%= form_with(model: product, local: true) do |form| %>
 
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
+<% if product.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(product.errors.count, "error") %>
+      prohibited this product from being saved:</h2>
+    <ul>
       <% product.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
+    </ul>
+  </div>
+<% end %>
+<div class="container show-product-page">
+  <div class="row">
+    <div class="col-lg-6 col-md-12">
+      <div class="view-product-image">
+        <%=image_tag("placeholder-image.png")%>
+      </div>
+
     </div>
-  <% end %>
+    <!--End col-->
+    <div class="col-lg-6 col-md-12 form-input-info">
+      <div class="show-description-name">
+        <h5 class="product-input-labels">Name:</h5>
+        <%= form.text_field :name, class:"edit-name-input input-product" %>
+      </div>
+      <div class="show-img-url">
+        <h5 class="product-input-labels">Image url:</h5>
+        <%= form.text_field :image_url, class:"edit-name-input input-product" %>
+      </div>
+      <div class="show-description-text">
+        <h5 class="product-input-labels">Description:</h5>
+        <%= form.text_area :description, class: " input-product" %>
+      </div>
+      <div class="show-description-cost">
+        <h5 class="product-input-labels">price:</h5>
+        <%= form.text_field :price, class:"edit-name-input input-product" %>
+      </div>
+      <div class="show-description-name">
+        <h5 class="product-input-labels">Color:</h5>
+        <%= form.text_field :colour, class:"edit-name-input input-product" %>
+      </div>
 
-
-
-  <div class="container show-product-page">
-    <div class="row">
-      <div class="col-lg-6 col-md-12">
-        <div class="view-product-image">
-
-
-<%=image_tag("placeholder-image.png")%>
-
+      <div class="actions submit-edit-button" align="center">
+        <%= form.submit %>
+      </div>
+    </div>
+    <!--End col-->
+  </div>
+  <!--End row -->
 </div>
-      </div><!--End col-->
-      <div class="col-lg-6 col-md-12 form-input-info">
-        <div class="show-description-name">
-          <h5 class="product-input-labels" >Name:</h5>
-          <%= form.text_field :name, class:"edit-name-input input-product" %>
-        </div>
-
-        <div class="show-img-url">
-          <h5 class="product-input-labels" >Image url:</h5>
-          <%= form.text_field :image_url, class:"edit-name-input input-product" %>
-        </div>
-
-        <div class="show-description-text">
-          <h5 class="product-input-labels" >Description:</h5>
-          <%= form.text_area :description, class: " input-product" %>
-        </div>
-        <div class="show-description-cost">
-          <h5 class="product-input-labels" >price:</h5>
-          <%= form.text_field :price, class:"edit-name-input input-product" %>
-        </div>
-        <div class="actions submit-edit-button" align="center">
-          <%= form.submit %>
-        </div>
-      </div><!--End col-->
-    </div><!--End row -->
-  </div><!--End container-->
-
+<!--End container-->
 <% end %>

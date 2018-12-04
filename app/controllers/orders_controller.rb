@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class OrdersController < ApplicationController
   def index
     @orders = Order.includes(:product).all
@@ -5,16 +7,11 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    
   end
 
-  def new
-  end
+  def new; end
 
-  def create
-  end
+  def create; end
 
-  def destroy
-  end
-
+  def destroy; end
 end

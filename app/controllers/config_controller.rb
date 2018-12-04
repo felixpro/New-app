@@ -1,4 +1,5 @@
+# frozen_string_literal: true
+
 class ConfigController < ApplicationController
-  def root
-  end
+  def root; end
 end

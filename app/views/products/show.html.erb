@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
-
 <h1  class="product-title" align="center">Your product</h1>
-
-
-
 
 <div class="container show-product-page">
   <div class="row">
@@ -17,25 +13,24 @@
         <h5>Name:</h5>
         <p> <%= @product.name %> </p>
       </div>
-
       <div class="show-img-url">
         <h5>Image url:</h5>
         <textarea name="name" rows="2" cols="80"><%= @product.image_url %></textarea>
       </div>
-
-
       <div class="show-description-text">
         <h5>Description:</h5>
         <textarea name="name" rows="2" cols="80"><%= @product.description %></textarea>
       </div>
       <div class="show-description-cost">
-        <h5>price:</h5>
+        <h5>Price:</h5>
           <p>$&nbsp<%= @product.price %></p>
       </div>
+      <div class="show-description-name">
+        <h5>Color</h5>
+        <p> <%= @product.colour %> </p>
+      </div>
+
     </div><!--End col-->
-
-
-
   </div>
 </div><!--End container-->
 

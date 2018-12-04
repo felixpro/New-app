@@ -2,25 +2,20 @@
 
 <div class="header-products d-flex justify-content-center">
   <div class="header-image-info">
-   <h1>Give your life a Pedal</h1>
+    <h1>Give your life a Pedal</h1>
     <button type="button" name="button"><%= link_to 'ADD PRODUCT', new_product_path, {:style=>'color:#FFFFFF;', class: "add-product-link"} %></button>
+  </div>
 </div>
-</div><!--End header-products -->
-
-
-
-
+<!--End header-products -->
 
 <p id="notice"><%= notice %></p>
 
-    <div class="container">
-      <div class="row">
-          <% @products.each do |product| %>
-          <%= render partial: "product", locals: {product: product} %>
-        <% end %>
-      </div><!--End row-->
-    </div><!--End container-->
-
-<div class="">
- 
+<div class="container">
+  <div class="row">
+    <% @products.each do |product| %>
+      <%= render partial: "product", locals: {product: product} %>
+    <% end %>
+  </div>
+  <!--End row-->
 </div>
+<!--End container-->
