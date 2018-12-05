@@ -59,8 +59,11 @@
 .input-style input {
   width: 80%;
   float: left;
-  border-radius: 0px 25px 25px 0px;
   padding: 10px 40px;
+}
+
+.submit-button-header {
+
 }
 
 .principal-logo {
@@ -212,17 +215,19 @@
   margin-right: 10px;
   padding-top: 5px;
 }
-
+.input-group-append input {
+  padding: 10px 0;
+}
 .form-hidden label span {
   font-size: 14px;
 }
 
 .form-hidden input {
-  width: 70%;
-  border-radius: 0px 25px 25px 0px;
+  width: 50%;
   padding: 10px 40px;
   height: 50px;
 }
+
 
 /* end Hiden Header*/
 /*Carousel*/
