@@ -10,6 +10,4 @@ class Product < ApplicationRecord
       Product.where("name ilike ?", "%#{search_term}%")
     end
   end
-
-
 end
