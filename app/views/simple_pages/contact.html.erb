@@ -1,21 +1,77 @@
-<h1>Contact Us</h1>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317718.69319292053!2d-0.3817765050863085!3d51.528307984912544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C+UK!5e0!3m2!1sen!2sdo!4v1544365342182" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+<div class="container contact-content-description">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="contact-adress">
+        <div class="img-adrs-info">
+          <span><%=image_tag("contact-adress.png")%>
+</span>
+        </div>
+        <p>ADDRESS</p>
+        <p>1635 Franklin Street Montgomery, Near Sherwood Mall. AL 36104</p>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="contact-adress">
+        <div class="img-adrs-info">
+          <span><%=image_tag("phone-call.png")%></span>
+        </div>
+        <p>ADDRESS</p>
+        <p>1635 Franklin Street Montgomery, Near Sherwood Mall. AL 36104</p>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="contact-adress">
+        <div class="img-adrs-info">
+          <span> <%=image_tag("email.png")%></span>
+        </div>
+        <p>ADDRESS</p>
+        <p>1635 Franklin Street Montgomery, Near Sherwood Mall. AL 36104</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <%= flash[:notice] %>
 
 <%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
-<div class="row">
-  <div class="form-group">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+
+<div class="container form-contact">
+
+  <div class="row">
+    <div class="col-lg-7 contact-description">
+      <h2>Send us a message</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod labore
+         et dolore magna aliqua.</p>
+    </div>
   </div>
-  <div class="form-group">
-    <%= form.label :email %>
-    <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= form.label :name, "Name*" %>
+        <%= form.text_field :name, class: "form-control"%>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= form.label :email, "Your Email*"%>
+        <%= form.text_field :email, class: "form-control" %>
+      </div>
+    </div>
+  </div><!--End row-->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="form-group">
+        <%= form.label :message, "Your Message"%>
+        <%= form.text_area :message, class: "form-control", rows: 5 %>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <%= form.label :message %>
-    <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5 %>
-  </div>
+  <%= form.submit "SEND MESSAGE", class: "form_label btn btn-success btn-lg submit-contact-btn" %>
+
 </div>
-<%= form.submit "Send", class: "form_label" %>
+
 <% end %>

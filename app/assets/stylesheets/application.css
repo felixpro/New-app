@@ -795,70 +795,99 @@
 }
 
 /*End contact-footer-info*/
+
+
+
+
 /*Contact page*/
-.contact-container {
-  margin-top: 50px;
+
+
+.contact-content-description {
+  margin-top: 60px;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+
 }
+
+.contact-adress {
+  border:10px solid  #f2f2f2;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.contact-adress span {
+  background: #27ae60;
+  border-radius: 50%;
+  padding: 20px;
+  position: relative;
+  bottom: 40px;
+
+}
+
+.img-adrs-info {
+  display: flex;
+  justify-content: center;
+}
+
+.form-contact  .form-control{
+ border:2px solid  #e6e6e6;
+ font-family: Poppins, sans-serif;
+
+}
+
+.form-contact label {
+  color:#c2c2c2;
+  font-size: 16px;
+}
+
 
 .form-contact {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
-.textarea-contact {
-  resize: none;
+
+.contact-description {
+  margin-bottom: 40px;
+}
+.submit-contact-btn {
+  font-size: 14px;
+  padding: 20px 30px;
+  border: none;
+  margin-bottom: 40px;
 }
 
-.label-form-contact {
-  font-size: 12px;
-  color: #5e9bfc;
-  margin: 0;
-  display: block;
-  opacity: 1;
-  -webkit-transition: .333s ease top, .333s ease opacity;
-  transition: .333s ease top, .333s ease opacity;
+
+.contact-description p{
+  color:#c2c2c2;
 }
 
-.contact-input {
-  border-radius: 0;
-  border-color: #ccc;
-  border-width: 0 0 2px 0;
-  border-style: none none solid none;
-  box-shadow: none;
+@media (max-width:992px) {
+.contact-adress {
+  margin-bottom: 50px;
 }
 
-.form-control:focus {
-  box-shadow: none;
-  border-color: #5e9bfc;
 }
-
-.js-hide-label {
-  opacity: 0;
-}
-
-.js-unhighlight-label {
-  color: #999
-}
-
-.btn-start-order {
-  background: 0 0 #ffffff;
-  border: 1px solid #2f323a;
-  border-radius: 3px;
-  color: #2f323a;
-  font-family: "Raleway", sans-serif;
-  font-size: 16px;
-  line-height: inherit;
-  margin: 30px 0;
-  padding: 10px 50px;
-  text-transform: uppercase;
-  transition: all 0.25s ease 0s;
-}
-
-.btn-start-order:hover, .btn-start-order:active, .btn-start-order:focus {
-  border-color: #5e9bfc;
-  color: #5e9bfc;
-}
-
 /*End contact page*/
+
+/* Thanks */
+
+.panel-body {
+  margin-bottom: 500px;
+  margin-top: 100px;
+}
+
+.panel-body p {
+  width: 50%;
+  font-family: Poppins, sans-serif;
+  border: 1px solid #c2c2c2;
+  margin: auto;
+  text-align:center;
+  padding: 30px;
+}
+
+
+/*End thanks*/
+
 /* Footer */
 footer {
   margin-top: 20px;
