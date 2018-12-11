@@ -52,13 +52,13 @@
     <div class="col-lg-6">
       <div class="form-group">
         <%= form.label :name, "Name*" %>
-        <%= form.text_field :name, class: "form-control"%>
+        <%= form.text_field :name, class: "form-control", :required => true%>
       </div>
     </div>
     <div class="col-lg-6">
       <div class="form-group">
         <%= form.label :email, "Your Email*"%>
-        <%= form.text_field :email, class: "form-control" %>
+        <%= form.text_field :email, class: "form-control", :required => true %>
       </div>
     </div>
   </div><!--End row-->
@@ -66,7 +66,7 @@
     <div class="col-lg-12">
       <div class="form-group">
         <%= form.label :message, "Your Message"%>
-        <%= form.text_area :message, class: "form-control", rows: 5 %>
+        <%= form.text_area :message, class: "form-control", rows: 5, :required => true %>
       </div>
     </div>
   </div>
