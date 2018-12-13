@@ -1196,7 +1196,22 @@ footer {
 }
 
 /*Order page*/
+
 /*End order*/
+
+
+/* user-new page*/
+.loginForm {
+  margin: 70px auto;
+  box-shadow: 0 12px 44px 0 rgba(236, 236, 236, 0.98);
+  font-family: Poppins, sans-serif;
+
+}
+
+/* End user */
+
+
+
 /* Typography */
 .index-carousel .carousel-caption {
   font-family: 'Roboto', sans-serif;

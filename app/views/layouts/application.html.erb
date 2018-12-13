@@ -23,6 +23,7 @@
   </head>
   <body>
 
+
     <header>
       <div class="hidden_header" id="hidden_header">
         <nav class="navbar  navbar-expand-lg navbar-dark">
@@ -68,6 +69,7 @@
       <!--Hidden search-->
 
 
+      <p class="notice"><%= notice %></p>
 
 
 
@@ -124,6 +126,7 @@
     <!--End row-->
   </div>
   <!--End form-header-->
+
   <div class=" nav-container" id="nav-container">
     <div class="container ">
       <div class="row">
@@ -151,6 +154,16 @@
               <li><%= link_to "LANDING PAGE", simple_pages_landing_page_path, { class: 'link_style'} %></li>
               <li><%= link_to "ORDERS", orders_path, { class: 'link_style'} %></li>
               <li><%= link_to "CONTACT US", simple_pages_contact_path, { class: 'link_style'} %></li>
+              <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to('LOGOUT', destroy_user_session_path, method: :delete, class: "link_style") %>
+              </li>
+              <% else %>
+              <li class="nav-item">
+                <%= link_to('LOGIN', new_user_session_path, class: "link_style") %>
+              </li>
+              <% end %>
+              </li>
             </ul>
           </div>
         </div>
@@ -159,6 +172,8 @@
       <!--End container-->
     </div>
   </div>
+
+
   <!--End nav container-->
   <%= yield %>
 
