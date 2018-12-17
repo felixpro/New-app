@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-
+$('.alert').alert("Bien")
 
 
 $(document).ready(function() {
@@ -58,4 +58,5 @@ $(document).ready(function() {
 						}
         });
     }
+
 });
