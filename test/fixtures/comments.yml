@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  description: MyText
-  review: 1
-  user_id: 1
-  product_id: 1
+  user: one
+  body: MyText
+  rating: 1
+  product: one
 
 two:
-  description: MyText
-  review: 1
-  user_id: 1
-  product_id: 1
+  user: two
+  body: MyText
+  rating: 1
+  product: two

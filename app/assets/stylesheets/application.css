@@ -1061,6 +1061,21 @@ footer {
   font-family: 'Noto Serif', serif;
 }
 
+.show-product-page .list-group {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.show-product-page .list-group li {
+  margin-top: 10px;
+  color: #000000;
+}
+
+.show-product-page .list-group li span{
+  color: grey;
+}
+
+
 .show-product-page {
   margin-top: 50px;
 }
@@ -1076,24 +1091,22 @@ footer {
 }
 
 .show-description-name p {
-  border-bottom: 1px solid #d9d9d9;
   padding-bottom: 5px;
-  margin-bottom: 33px;
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-family: Poppins, sans-serif;
+
 }
 
-.show-product-page textarea {
-  max-height: 50px;
-  width: 100%;
-  border: none;
-  outline: none;
-  resize: none;
-  border-bottom: 1px solid #d9d9d9;
-  margin-bottom: 33px;
-}
+
 
 .show-description-cost p {
   padding-bottom: 5px;
-  border-bottom: 1px solid #d9d9d9;
+  font-size: 26px;
+  line-height: 32px;
+  color: #27ae60;
+  font-family: Poppins, sans-serif;
+
 }
 
 .bottom-buttons {

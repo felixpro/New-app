@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<h1  class="product-title" align="center">Your product</h1>
+<!-- <h1  class="product-title" align="center">Your product</h1> -->
 
 <div class="container show-product-page">
   <div class="row">
@@ -9,26 +9,42 @@
        </div>
     </div><!--End col-->
     <div class="col-lg-6 col-md-12 form-input-info">
+
       <div class="show-description-name">
-        <h5>Name:</h5>
         <p> <%= @product.name %> </p>
       </div>
-      <div class="show-img-url">
-        <h5>Image url:</h5>
-        <textarea name="name" rows="2" cols="80"><%= @product.image_url %></textarea>
-      </div>
-      <div class="show-description-text">
-        <h5>Description:</h5>
-        <textarea name="name" rows="2" cols="80"><%= @product.description %></textarea>
-      </div>
+
       <div class="show-description-cost">
-        <h5>Price:</h5>
-          <p>$&nbsp<%= @product.price %></p>
+          <p>$<%= @product.price %></p>
       </div>
-      <div class="show-description-name">
-        <h5>Color</h5>
-        <p> <%= @product.colour %> </p>
+
+      <div class="show-description-text">
+
+        <p><%= @product.description %></p>
+
       </div>
+
+      <p>
+        <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          Image url
+        </a>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          <p><%= @product.image_url %></p>
+        </div>
+      </div>
+      <hr>
+
+      <ul class="list-group">
+        <li>Color:  <span><%= @product.colour %></span> </li>
+        <li>Category: <span>Mountain</span></li>
+        <li>Tag:  <span>Mountain</span></li>
+      </ul>
+
+    <p>The highest comment:&nbsp&nbsp<%= @product.comments.rating_desc.first.body %></p>
+    <p>The lowest comment: &nbsp&nbsp<%= @product.comments.rating_asc.first.body %></p>
+
 
     </div><!--End col-->
   </div>
