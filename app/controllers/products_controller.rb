@@ -7,12 +7,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+
     if params[:q]
       search_term = params[:q]
       @products = Product.search(search_term)
       # return our filtered list here
     else
-      @products = Product.all
+      @products = Product.paginate(:page => params[:page], per_page: 2)
     end
   end
 
@@ -36,7 +37,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }

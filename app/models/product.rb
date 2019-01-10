@@ -1,6 +1,10 @@
-# frozen_string_literal: true
-
 class Product < ApplicationRecord
+  validates :name, presence: true
+  validates :colour, presence: true
+  validates :description, presence: true
+  validates :price, numericality: { only_integer: true }
+
+
   has_many :orders
   has_many :comments
 
