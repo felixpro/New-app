@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :orders, only: %i[index show create destroy]
+
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }, controllers: { registrations: "user_registrations" }
 
   resources :products do
     resources :comments
   end
+  resources :users
 
     resources :products
 
@@ -20,5 +23,4 @@ Rails.application.routes.draw do
   post 'simple_pages/thank_you'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :orders, only: %i[index show create destroy]
 end

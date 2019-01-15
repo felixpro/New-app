@@ -1,25 +1,8 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require jquery.raty
- */
 
 body {
   margin: 0;
   padding: 0;
 }
-
 
 .top-icon {
   width: 12px;
@@ -1235,7 +1218,6 @@ footer {
 
 /*End order*/
 
-
 /* user-new page*/
 .loginForm {
   margin: 70px auto;
@@ -1252,3 +1234,37 @@ footer {
 .index-carousel .carousel-caption {
   font-family: 'Roboto', sans-serif;
 }
+
+
+
+/*Comment*/
+
+.product-reviews .comment-name{
+  display:inline;
+}
+
+.product-reviews .rated{
+  display: block;
+}
+
+.product-reviews .comment-image {
+  float: left;
+  margin:5px;
+}
+
+.product-reviews .row:first-child  {
+ margin-bottom:40px;
+}
+
+.product-reviews .comment-name-time {
+  margin-bottom: 15px;
+}
+
+.product-reviews .comment-body-image p {
+  margin: 0 8px;
+  padding-top: 10px;
+  display: inline-block;
+}
+
+
+/*end Comment*/
