@@ -26,7 +26,7 @@
     <div class="col-lg-6 col-md-12 form-input-info">
       <div class="show-description-name">
         <h5 class="product-input-labels">Name:</h5>
-        <%= form.text_field :name, class:"edit-name-input input-product" %>
+        <%= form.text_field :name, class:"input-product form-control" %>
       </div>
       <div class="show-img-url">
         <h5 class="product-input-labels">Image url:</h5>
@@ -34,17 +34,16 @@
       </div>
       <div class="show-description-text">
         <h5 class="product-input-labels">Description:</h5>
-        <%= form.text_area :description, class: " input-product" %>
+        <%= form.text_area :description, class: " form-control " %>
       </div>
       <div class="show-description-cost">
         <h5 class="product-input-labels">price:</h5>
-        <%= form.text_field :price, class:"edit-name-input input-product" %>
+        <%= form.text_field :price, class:"edit-name-input form-control input-product", id:"exampleFormControlTextarea1"%>
       </div>
       <div class="show-description-name">
         <h5 class="product-input-labels">Color:</h5>
         <%= form.text_field :colour, class:"edit-name-input input-product" %>
       </div>
-
       <div class="actions submit-edit-button" align="center">
         <%= form.submit %>
       </div>

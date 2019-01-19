@@ -29,9 +29,8 @@
     <% if alert %>
         <p class="alert alert-primary text" align="center"><%=alert%></p>
     <% end %>
-
+    <p id="notice"><%= notice %></p>
     <header>
-
       <div class="hidden_header" id="hidden_header">
         <nav class="navbar  navbar-expand-lg navbar-dark">
           <%=image_tag("bicycle-logo.png", class: "navbar-brand")%>
@@ -54,6 +53,15 @@
               <li><%= link_to "LANDING PAGE", simple_pages_landing_page_path, {:style=>'color:#000;'} %></li>
               <li><%= link_to "ORDERS", orders_path, { :style=>'color:#000;'} %></li>
               <li><%= link_to "CONTACT US", simple_pages_contact_path, {:style=>'color:#000;'} %></li>
+              <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to('LOGOUT', destroy_user_session_path, method: :delete, class: "link_style") %>
+              </li>
+              <% else %>
+              <li class="nav-item">
+                <%= link_to('LOGIN', new_user_session_path, class: "link_style") %>
+              </li>
+              <% end %>
             </ul>
           </div>
         </nav>
@@ -164,7 +172,7 @@
                 <%= link_to('LOGIN', new_user_session_path, class: "link_style") %>
               </li>
               <% end %>
-              </li>
+
             </ul>
           </div>
         </div>

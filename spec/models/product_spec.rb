@@ -9,17 +9,17 @@ describe Product do
 } # Creating a new product
     let(:user) {User.create!(email:"felixpujols007@gmail.com",password:"4565641654")}
 
-    before do
+    before do # Brefore create the product, cretae 3 comments, this code run before the first context
       product.comments.create!(rating: 1, user: user, body: "Awful bike!")
       product.comments.create!(rating: 3, user: user, body: "Ok bike!")
       product.comments.create!(rating: 5, user: user, body: "Great bike!")
     end
 
-    it "returns the average rating of all comments" do
+    it "Returns the average rating of all comments" do
         expect(product.average_rating).to eq 3
      end
 
-     it "is not valid without a name" do
+     it "Is not valid without a name" do
        expect(Product.new(description: "Nice bike")).not_to be_valid # Creting an invalid product to proof
       end
 

@@ -1141,8 +1141,6 @@ footer {
 /*form product*/
 .edit-name-input {
   width: 100%;
-  border: none;
-  border-bottom: 1px solid #d9d9d9;
   padding-bottom: 5px;
   outline: none;
   margin-bottom: 30px;
