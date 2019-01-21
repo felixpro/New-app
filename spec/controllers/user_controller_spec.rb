@@ -18,7 +18,7 @@ describe UsersController, type: :controller do
 
       it 'when try to get show page of the second user' do
         get :show, params: { id: secondUser.id }
-        expect(response).to redirect_to(root_path)
+        expect(response).to have_http_status(200)
       end
     end
 
