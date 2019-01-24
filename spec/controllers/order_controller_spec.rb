@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 describe OrdersController, type: :controller do
- let(:user){User.create(email: "felixpujols007@gmail.com", password: "f236756419997")}
+
+before do
+  @user = FactoryBot.create(:user)
+
+end
 
   context 'GET, #index' do
     it 'Give a 302 status' do
@@ -13,7 +17,7 @@ describe OrdersController, type: :controller do
   context 'GET, #index' do
 
     before do
-      sign_in user
+      sign_in @user
     end
 
     it 'render the index page' do
