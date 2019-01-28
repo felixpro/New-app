@@ -90,3 +90,5 @@ gem 'will_paginate-bootstrap4'
 gem 'rails-controller-testing'
 
 gem 'stripe'
+
+gem "brakeman"
