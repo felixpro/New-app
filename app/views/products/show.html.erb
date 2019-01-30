@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-lg-6 col-md-12">
       <div class="view-product-image">
-          <%= image_tag(@product.image_url, width: "350", class: " img-fluid img-zoom", id: "zoom") %>
+          <%= image_tag(@product.image_url, width: "350", class: " img-fluid img-zoom", id: "zoom", data_zoom_image:@product.image_url) %>
        </div>
     </div><!--End col-->
     <div class="col-lg-6 col-md-12 form-input-info">
