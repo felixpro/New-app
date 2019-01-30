@@ -1,10 +1,11 @@
 <!-- <h1  class="product-title" align="center">Your product</h1> -->
 
+ 
 <div class="container show-product-page">
   <div class="row">
     <div class="col-lg-6 col-md-12">
       <div class="view-product-image">
-          <%= image_tag(@product.image_url, class: "img-fluid") %>
+          <%= image_tag(@product.image_url, width: "350", class: " img-fluid img-zoom", id: "zoom") %>
        </div>
     </div><!--End col-->
     <div class="col-lg-6 col-md-12 form-input-info">
@@ -31,10 +32,8 @@
               <%= render partial: "shared/stripe_checkout_button" %>
               <%= hidden_field_tag(:product_id, @product.id) %>
             <% end %>
-
-
-
       </p>
+
       <div class="collapse" id="collapseExample">
         <div class="card card-body">
           <p><%= @product.image_url %></p>

@@ -12,14 +12,14 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require jquery3
+//= require rails-ujs
+//= require turbolinks
 //= require jquery.raty.js
 //= require_tree .
 
+$(document).ready(function(){
 
-
-$(document).ready(function() {
 	// Test for placeholder support
     $.support.placeholder = (function(){
         var i = document.createElement('input');
@@ -60,4 +60,5 @@ $(document).ready(function() {
         });
     }
 
-});
+
+ });
