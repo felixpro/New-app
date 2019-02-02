@@ -1,37 +1,38 @@
-<!-- <h1  class="product-title" align="center">Your product</h1> -->
+<!-- <h1 class="product-title" align="center">Your product</h1> -->
 
- 
 <div class="container show-product-page">
   <div class="row">
-    <div class="col-lg-6 col-md-12">
-      <div class="view-product-image">
+    <% cache @product do %>
+      <div class="col-lg-6 col-md-12">
+        <div class="view-product-image">
           <%= image_tag(@product.image_url, width: "350", class: " img-fluid img-zoom", id: "zoom") %>
-       </div>
-    </div><!--End col-->
-    <div class="col-lg-6 col-md-12 form-input-info">
-
-      <div class="show-description-name">
-        <p> <%= @product.name %> </p>
+        </div>
       </div>
+      <!--End col-->
+      <div class="col-lg-6 col-md-12 form-input-info">
 
-      <div class="show-description-cost">
+        <div class="show-description-name">
+          <p>
+            <%= @product.name %>
+          </p>
+        </div>
+
+        <div class="show-description-cost">
           <p>$<%= @product.price %></p>
-      </div>
+        </div>
 
-      <div class="show-description-text">
+        <div class="show-description-text">
+          <p><%= @product.description %></p>
+        </div>
 
-        <p><%= @product.description %></p>
-
-      </div>
-
-      <p>
-        <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          Image url
-        </a>
-        <%= form_with(url: '/payments/create') do |form| %>
-              <%= render partial: "shared/stripe_checkout_button" %>
-              <%= hidden_field_tag(:product_id, @product.id) %>
-            <% end %>
+        <p>
+          <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Image url
+          </a>
+          <%= form_with(url: '/payments/create') do |form| %>
+          <%= render partial: "shared/stripe_checkout_button" %>
+          <%= hidden_field_tag(:product_id, @product.id) %>
+        <% end %>
       </p>
 
       <div class="collapse" id="collapseExample">
@@ -42,27 +43,33 @@
       <hr>
 
       <ul class="list-group">
-        <li>Color:  <span><%= @product.colour %></span> </li>
-        <li>Category: <span>Mountain</span></li>
-        <li>Tag:  <span>Mountain</span></li>
-        <li><p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
-      </li>
+        <li>Color:
+          <span><%= @product.colour %></span>
+        </li>
+        <li>Category:
+          <span>Mountain</span></li>
+        <li>Tag:
+          <span>Mountain</span></li>
+        <li>
+          <p>Average Rating:
+            <div class="rated" data-score="<%= @product.average_rating %>"></div>
+          </p>
+        </li>
       </ul>
 
       <%= render 'new_comment' %>
-
       <%= render 'comments' %>
-
       <div class="mx-auto pagination"><%= will_paginate @comments, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
       </div>
-
-
-
-    </div><!--End col-->
-  </div>
-</div><!--End container-->
+    </div>
+    <!--End col-->
+  <% end %>
+</div>
+</div>
+<!--End container-->
 
 <div class="bottom-buttons">
-<%= link_to 'Edit', edit_product_path(@product), class: "Edit-link" %> <span>|</span>
+<%= link_to 'Edit', edit_product_path(@product), class: "Edit-link" %>
+<span>|</span>
 <%= link_to 'Back', products_path, class: "Back-link" %>
 </div>
