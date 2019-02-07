@@ -107,8 +107,8 @@ Rails.application.configure do
 
 
 
-    config.web_socket_server_url = "wss://new-app.herokuapp.com/cable"
-    config.action_cable.allowed_request_origins = ['https://new-app.herokuapp.com', 'http://new-app.herokuapp.com']
+    config.web_socket_server_url = "wss://gentle-castle-39446.herokuapp.com/cable"
+    config.action_cable.allowed_request_origins = ['https://gentle-castle-39446.herokuapp.com', 'http://gentle-castle-39446.herokuapp.com']
 
 
 
