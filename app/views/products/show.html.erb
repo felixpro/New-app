@@ -2,7 +2,6 @@
 
 <div class="container show-product-page">
   <div class="row">
-    <% cache @product do %>
       <div class="col-lg-6 col-md-12">
         <div class="view-product-image">
           <%= image_tag(@product.image_url, width: "350", class: " img-fluid img-zoom", id: "zoom") %>
@@ -10,21 +9,17 @@
       </div>
       <!--End col-->
       <div class="col-lg-6 col-md-12 form-input-info">
-
         <div class="show-description-name">
           <p>
             <%= @product.name %>
           </p>
         </div>
-
         <div class="show-description-cost">
           <p>$<%= @product.price %></p>
         </div>
-
         <div class="show-description-text">
           <p><%= @product.description %></p>
         </div>
-
         <p>
           <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
             Image url
@@ -34,14 +29,12 @@
           <%= hidden_field_tag(:product_id, @product.id) %>
         <% end %>
       </p>
-
       <div class="collapse" id="collapseExample">
         <div class="card card-body">
           <p><%= @product.image_url %></p>
         </div>
       </div>
       <hr>
-
       <ul class="list-group">
         <li>Color:
           <span><%= @product.colour %></span>
@@ -50,6 +43,8 @@
           <span>Mountain</span></li>
         <li>Tag:
           <span>Mountain</span></li>
+        <li>view
+          <span><%= @product.views %></span></li>
         <li>
           <p>Average Rating:
             <div class="rated" data-score="<%= @product.average_rating %>"></div>
@@ -58,16 +53,15 @@
       </ul>
 
       <%= render 'new_comment' %>
+      <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
       <%= render 'comments' %>
       <div class="mx-auto pagination"><%= will_paginate @comments, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
       </div>
     </div>
     <!--End col-->
-  <% end %>
 </div>
 </div>
 <!--End container-->
-
 <div class="bottom-buttons">
 <%= link_to 'Edit', edit_product_path(@product), class: "Edit-link" %>
 <span>|</span>
