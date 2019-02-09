@@ -1,7 +1,7 @@
 <!-- <h1 class="product-title" align="center">Your product</h1> -->
 
 <div class="container show-product-page">
-  <div class="row">
+  <div class="row" data-product-id="<%= @product.id %>">
       <div class="col-lg-6 col-md-12">
         <div class="view-product-image">
           <%= image_tag(@product.image_url, width: "350", class: " img-fluid img-zoom", id: "zoom") %>

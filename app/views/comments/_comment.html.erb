@@ -1,28 +1,24 @@
-    <hr>
-    <div class="row">
+<hr>
+<div class="row">
 
-      <div class="col-12 comment-name-time">
-        <h6 class="comment-name"><%= comment.user.first_name %></h6>
-        <small>
-          <em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em>
-        </small>
-        <span class="float-right">
+  <div class="col-12 comment-name-time">
+    <h6 class="comment-name"><%= comment.user.first_name %></h6>
+    <small>
+      <em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em>
+    </small>
+    <span class="float-right">
+      <% if current_user && current_user.admin? %>
+        <%= link_to product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <%= image_tag "comment-delete.png", class: "some css class here" %>
+      <% end %>
+    <% end %>
+  </span>
+</div>
+<div class="col-12 comment-body-image">
+  <div class="rated" data-score="<%= comment.rating %>"></div>
+  <%=image_tag("person.png", class: "comment-image")%>
+  <p><%= comment.body %></p>
+</div>
 
-          <% if signed_in? && current_user.admin? %>
-
-            <%= link_to product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <%= image_tag "comment-delete.png", class: "some css class here" %>
-          <% end %>
-        <% end %>
-
-      </span>
-    </div>
-
-    <div class="col-12 comment-body-image">
-      <div class="rated" data-score="<%= comment.rating %>"></div>
-      <%=image_tag("person.png", class: "comment-image")%>
-      <p><%= comment.body %></p>
-    </div>
-
-  </div>
-  <hr>
+</div>
+<hr>
