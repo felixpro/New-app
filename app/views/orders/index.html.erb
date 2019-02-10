@@ -1,44 +1,18 @@
-<div class="row">
-  <% @orders.each do |order| %>
-    <div class="col-sm">
-      <h1>
-        Order # <%= order.id %>:
-        <%= link_to order.product.name, order %>
-      </h1>
-      <p><%= order.product.description %></p>
-      <strong>$ <%= order.product.price %></strong>
-    </div><!-- /col -->
-  <% end %>
-</div>
-
-<div class="container">
+<div class="container order-container">
   <div class="row">
     <div class="col-lg-8">
-      <div class="order-description">
-        <p class="order-product-title">Product</p>
-        <div class="price-description d-flex justify-content-between ml-auto">
+      <div class="order-description d-flex justify-content-around">
+        <p class="order-product-title">Product name</p>
           <p>price</p>
-          <p>Quantity</p>
-          <p>Total</p>
-        </div>
+          <p>ID</p>
       </div>
-
-        <div class="order-name-quantity d-flex">
-          <div class="delete-order">
-            <%=image_tag("close-cross.png")%>
-          </div>
-          <div class="image-order">
-            <%=image_tag("index-galery-3.jpg")%>
-          </div>
-          <div class="">
-            <p>Product name ppdkold</p>
-          </div>
+      <% @orders.each do |order| %>
+        <div class="order-name-quantity d-flex justify-content-around">
+          <p><%= link_to order.product.name, order %></p>
+          <p>$<%= order.product.price %></p>
+          <p>#<%= order.id %></p>
         </div>
-
-    </div>
-    <div class="col-lg-4">
-      <div class="total-info">
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

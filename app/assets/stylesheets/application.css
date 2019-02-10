@@ -4,6 +4,7 @@ body {
   padding: 0;
 }
 
+
 .top-icon {
   width: 12px;
   margin-right: 8px;
@@ -1179,13 +1180,21 @@ footer {
   width: 200px;
 }
 
+.order-container {
+padding-top: 100px;
+padding-bottom: 100px;
+margin-left: 20%;
+}
+
 .order-description {
   border: 1px solid grey;
   padding: 0 10px;
+  margin: 0;
 }
 
 .order-description p {
   margin: 0;
+  padding: 5px;
 }
 
 .order-description .order-product-title {
@@ -1195,6 +1204,10 @@ footer {
 .order-name-quantity {
   border: 1px solid grey;
   border-top: none;
+}
+.order-name-quantity p {
+  margin: 0;
+  padding: 10px;
 }
 
 .total-info {
@@ -1264,5 +1277,10 @@ footer {
   display: inline-block;
 }
 
-
 /*end Comment*/
+
+
+
+#notice {
+  margin: 0;
+}
